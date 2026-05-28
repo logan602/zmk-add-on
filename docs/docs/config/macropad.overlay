@@ -1,0 +1,27 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
+
+        input-gpios
+            = <&gpio0  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW1  — pin 006 */
+            , <&gpio0  8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW2  — pin 008 */
+            , <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW3  — pin 010 */
+            , <&gpio0 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW4  — pin 011 */
+            , <&gpio1 13 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW5  — pin 113 */
+            , <&gpio1 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW6  — pin 115 */
+            , <&gpio0  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW7  — pin 002 */
+            , <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW8  — pin 020 */
+            , <&gpio0 31 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW9  — pin 031 */
+            , <&gpio0 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW10 — pin 029 */
+            , <&gpio0 24 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW11 — pin 024 */
+            , <&gpio1  6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>   /* SW12 — pin 106 */
+            ;
+    };
+};
